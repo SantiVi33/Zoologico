@@ -8,6 +8,7 @@ import { CabezeraComponent } from './cabezera/cabezera.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { GaleriaComponent } from './galeria/galeria.component';
+import { CabeceraComponent } from './cabecera/cabecera.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GaleriaComponent } from './galeria/galeria.component';
     CabezeraComponent,
     FooterComponent,
     ContactoComponent,
-    GaleriaComponent
+    GaleriaComponent,
+    CabeceraComponent
   ],
   imports: [
     BrowserModule,
