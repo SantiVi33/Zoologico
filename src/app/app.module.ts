@@ -11,11 +11,13 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { ListaAnimalesComponent } from './lista-animales/lista-animales.component';
+import { CompraEntradasComponent } from './compra-entradas/compra-entradas.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'galeria', component: GaleriaComponent },
   { path: 'Animales', component: ListaAnimalesComponent },
+  { path: 'Entradas', component: CompraEntradasComponent },
   { path: '', component: PortadaComponent, pathMatch: 'full'},
   { path: '**', redirectTo: '/', pathMatch: 'full'},
 ];
@@ -28,7 +30,8 @@ const routes: Routes = [
     ContactoComponent,
     GaleriaComponent,
     CabeceraComponent,
-    ListaAnimalesComponent
+    ListaAnimalesComponent,
+    CompraEntradasComponent
   ],
   imports: [
     BrowserModule,
