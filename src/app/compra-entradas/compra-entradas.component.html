@@ -1,1 +1,37 @@
-<p>compra-entradas works!</p>
+<div class="container">
+    
+<h2 class="text-center">Bienvenido/a a la pestaña de compras de entrada, por favor complete los siguientes datos</h2>
+
+</div>
+
+<form class="container row g-3 mt-5">
+    <div class="col-md-3">
+      <label for="inputNom" class="form-label">Nombre/s</label>
+      <input type="text" class="form-control" id="nombre">
+    </div>
+    <div class="col-md-3">
+      <label for="inputApe" class="form-label">Apellido/s</label>
+      <input type="text" class="form-control" id="Apellido">
+    </div>
+    <div class="col-md-3">
+        <label for="inputDNI" class="form-label">Documento</label>
+        <input type="number" class="form-control" id="DNI">
+      </div>
+    <div class="col-md-3">
+      <label for="inputTipo" class="form-label">Tipo Persona</label>
+      <select id="inputTipo" class="form-select">
+        <option selected>Adulto</option>
+        <option>Bebe (menor a  3 años)</option>
+        <option>Niño (entre 3 y 12 años)</option>
+        <option>Adolescente (entre 12 y 16 años)</option>
+        <option>Jubilado</option>
+      </select>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Agregar Persona</button>
+    </div>
+    
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Calcular Monto</button>
+    </div>
+  </form>
