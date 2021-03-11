@@ -1,5 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 
+import {PersonalService} from '../app/personal.service';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +14,8 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { ListaAnimalesComponent } from './lista-animales/lista-animales.component';
 import { CompraEntradasComponent } from './compra-entradas/compra-entradas.component';
+
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
@@ -37,8 +41,11 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    PersonalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

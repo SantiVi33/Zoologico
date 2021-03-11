@@ -25,13 +25,14 @@ amigos y mas! no dudes en llamarnos o enviarnos un correo</h1>
 <h4>Correo : info@ZooPark.com</h4>
 
 <h3 class="mt-5">Quienes permiten hacer el funcionamiento del lugar: </h3>
-<h4>Jorge Sosa , Dueño</h4>
-<h4>Martin Perez , Encargado</h4>
-<h4>Jesica Perez , Tesorera</h4>
-<h4>Lucas Piedrabuena , Encargado</h4>
-<h4>Luis Suarez , Encargado</h4>
-<h4>Luciana Suarez , Encargada</h4>
+
+ <div class="container" *ngFor="let Persona of Personal">
+
+    <h4>{{Persona.Nombre}} {{Persona.Apellido}} , {{Persona.Trabajo}}</h4>
+    
+ </div>
+
 
 </div>
 
-<h1></h1>
+
