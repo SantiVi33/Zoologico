@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AnimalesService} from '../animales.service';
 
 @Component({
   selector: 'app-lista-animales',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaAnimalesComponent implements OnInit {
 
-  constructor() { }
+  public Animal: Array<any> = []
+
+  constructor(private animalService:AnimalesService) { 
+
+    this.animalService.VerAnimales().subscribe((resp:any )=>{
+
+      this.Animal = resp
+
+      console.log('DATOS ANIMALES CARGADOS')
+    })
+  } 
+
+
 
   ngOnInit(): void {
   }

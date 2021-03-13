@@ -1,6 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 
 import {PersonalService} from '../app/personal.service';
+import {AnimalesService} from '../app/animales.service';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -41,10 +42,11 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    HttpClientModule,
+    HttpClientModule, 
   ],
   providers: [
-    PersonalService
+    PersonalService,
+    AnimalesService
   ],
   bootstrap: [AppComponent]
 })
