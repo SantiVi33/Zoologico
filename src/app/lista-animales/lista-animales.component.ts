@@ -8,6 +8,8 @@ import {AnimalesService} from '../animales.service';
 })
 export class ListaAnimalesComponent implements OnInit {
 
+  AgregarAnimal:boolean = false;
+
   public Animal: Array<any> = []
 
   constructor(private animalService:AnimalesService) { 

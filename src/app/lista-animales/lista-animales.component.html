@@ -1,3 +1,61 @@
+<button class="btn btn-warning mt-3" (click)="AgregarAnimal = !AgregarAnimal"> Mostar/Ocultar agregado de animales</button>
+
+
+<div class="container mt-3" *ngIf="AgregarAnimal">
+
+    <form>
+        <div class="row">
+
+        <div class="mb-3 col-4">
+          <label for="NomAnimal" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="NomAnimal" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3 col-4" >
+          <label for="TipoAnimal" class="form-label">Tipo</label>
+          <input type="text" class="form-control" id="TipoAnimal">
+        </div>
+        <div class="mb-3 col-4" >
+            <label for="EspecieAnimal" class="form-label">Especie</label>
+            <input type="text" class="form-control" id="EspecieAnimal">
+        </div>
+        </div>
+
+        <div class="row">
+
+            <div class="mb-3 col-3">
+              <label for="PaisAnimal" class="form-label">PaisOrigen</label>
+              <input type="text" class="form-control" id="PaisAnimal" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3 col-3" >
+              <label for="ZonasAnimal" class="form-label">ZonasDondeHabitan</label>
+              <input type="text" class="form-control" id="ZonasAnimal">
+            </div>
+            <div class="mb-3 col-3" >
+                <label for="AlimentacionAnimal" class="form-label">Alimentacion</label>
+                <input type="text" class="form-control" id="AlimentacionAnimal">
+            </div>
+             <div class="mb-3 col-1" >
+                <label for="EdadAnimal" class="form-label">Edad</label>
+                <input type="number" class="form-control" id="EdadAnimal">
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="mb-3 input-group" >
+                <label for="ImagAnimal" class="form-label">Nombre Imagen </label>
+                <input type="text" class="form-control" id="ImagAnimal" placeholder="Nombre Imagen">
+                <span class="input-group-text">. JPG</span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Agregar Animal</button>
+
+      </form>
+
+</div>
+
+
 <div class="container mt-3 text-center" *ngFor="let animal of Animal ">
 
     <div class="row">
