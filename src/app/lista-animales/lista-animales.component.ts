@@ -11,6 +11,7 @@ export class ListaAnimalesComponent implements OnInit {
 
   AgregarAnimal:boolean = false;
   AnimalAgregado: boolean = false;
+  Carga:boolean = true;
 
   Nombre: FormControl = new FormControl('')
   Tipo: FormControl = new FormControl('')
@@ -35,6 +36,8 @@ export class ListaAnimalesComponent implements OnInit {
       this.Animal = resp
 
       console.log('DATOS ANIMALES CARGADOS')
+
+      this.Carga=false
     })
   } 
 
@@ -49,6 +52,7 @@ export class ListaAnimalesComponent implements OnInit {
       let alimentacion = this.Alimentacion.value;
       let edad = this.Edad.value;
       let url = this.URLfoto.value;
+      
 
       this.animalService.AgregarA(nombre,tipo,especie,pais,zonas,alimentacion,edad,url)
           .subscribe(data => {console.log(data)  
@@ -62,6 +66,7 @@ export class ListaAnimalesComponent implements OnInit {
         this.Edad.setValue("");
         this.URLfoto.setValue("");;
           })
+
 
   }
 

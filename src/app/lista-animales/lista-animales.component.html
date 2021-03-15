@@ -64,6 +64,15 @@
 
 </div>
 
+<div>
+
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border text-success" role="status" *ngIf="Carga">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+
 
 <div class="container mt-3 text-center" *ngFor="let animal of Animal">
 
@@ -87,5 +96,7 @@
         
 
     </div>
+
+</div>
 
 </div>
