@@ -8,15 +8,15 @@
 
         <div class="mb-3 col-4">
           <label for="NomAnimal" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="NomAnimal" aria-describedby="emailHelp">
+          <input [formControl]="Nombre" type="text" class="form-control" id="NomAnimal" >
         </div>
         <div class="mb-3 col-4" >
           <label for="TipoAnimal" class="form-label">Tipo</label>
-          <input type="text" class="form-control" id="TipoAnimal">
+          <input [formControl]="Tipo" type="text" class="form-control" id="TipoAnimal" >
         </div>
         <div class="mb-3 col-4" >
             <label for="EspecieAnimal" class="form-label">Especie</label>
-            <input type="text" class="form-control" id="EspecieAnimal">
+            <input [formControl]="Especie" type="text" class="form-control" id="EspecieAnimal" >
         </div>
         </div>
 
@@ -24,19 +24,19 @@
 
             <div class="mb-3 col-3">
               <label for="PaisAnimal" class="form-label">PaisOrigen</label>
-              <input type="text" class="form-control" id="PaisAnimal" aria-describedby="emailHelp">
+              <input [formControl]="PaisOrigen" type="text" class="form-control" id="PaisAnimal">
             </div>
             <div class="mb-3 col-3" >
               <label for="ZonasAnimal" class="form-label">ZonasDondeHabitan</label>
-              <input type="text" class="form-control" id="ZonasAnimal">
+              <input [formControl]="ZonasDondeHabitan" type="text" class="form-control" id="ZonasAnimal">
             </div>
             <div class="mb-3 col-3" >
                 <label for="AlimentacionAnimal" class="form-label">Alimentacion</label>
-                <input type="text" class="form-control" id="AlimentacionAnimal">
+                <input [formControl]="Alimentacion" type="text" class="form-control" id="AlimentacionAnimal">
             </div>
              <div class="mb-3 col-1" >
                 <label for="EdadAnimal" class="form-label">Edad</label>
-                <input type="number" class="form-control" id="EdadAnimal">
+                <input [formControl]="Edad" type="number" class="form-control" id="EdadAnimal" > 
             </div>
         </div>
 
@@ -44,19 +44,20 @@
 
             <div class="mb-3 input-group" >
                 <label for="ImagAnimal" class="form-label">Nombre Imagen </label>
-                <input type="text" class="form-control" id="ImagAnimal" placeholder="Nombre Imagen">
+                <input [formControl]="URLfoto" type="text" class="form-control" id="ImagAnimal"
+                placeholder="Nombre Imagen">
                 <span class="input-group-text">. JPG</span>
             </div>
         </div>
 
-        <button type="submit" class="btn btn-success">Agregar Animal</button>
+        <button type="submit" class="btn btn-success" (click)="AgregarA()">Agregar Animal</button>
 
       </form>
 
 </div>
 
 
-<div class="container mt-3 text-center" *ngFor="let animal of Animal ">
+<div class="container mt-3 text-center" *ngFor="let animal of Animal">
 
     <div class="row">
 

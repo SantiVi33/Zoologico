@@ -15,6 +15,7 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { ListaAnimalesComponent } from './lista-animales/lista-animales.component';
 import { CompraEntradasComponent } from './compra-entradas/compra-entradas.component';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 
@@ -43,6 +44,8 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule, 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     PersonalService,
