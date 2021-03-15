@@ -10,6 +10,7 @@ import { FormControl } from '@angular/forms'
 export class ListaAnimalesComponent implements OnInit {
 
   AgregarAnimal:boolean = false;
+  AnimalAgregado: boolean = false;
 
   Nombre: FormControl = new FormControl('')
   Tipo: FormControl = new FormControl('')
@@ -62,6 +63,12 @@ export class ListaAnimalesComponent implements OnInit {
         this.URLfoto.setValue("");;
           })
 
+  }
+
+  OcultarMensaje() {
+    if (this.AnimalAgregado == true) {
+      this.AnimalAgregado = false 
+    }
   }
 
 

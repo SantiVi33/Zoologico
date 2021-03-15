@@ -1,22 +1,29 @@
-<button class="btn btn-warning mt-3" (click)="AgregarAnimal = !AgregarAnimal"> Mostar/Ocultar agregado de animales</button>
+<button class="btn btn-warning mt-3" (click)="AgregarAnimal = !AgregarAnimal"
+(click)="OcultarMensaje()"> Mostar/Ocultar agregado de animales</button>
 
 
 <div class="container mt-3" *ngIf="AgregarAnimal">
+
+    <div class="container" *ngIf="AnimalAgregado">
+
+        <h3>Animal Agregado Correctamente</h3>
+    
+    </div>
 
     <form>
         <div class="row">
 
         <div class="mb-3 col-4">
           <label for="NomAnimal" class="form-label">Nombre</label>
-          <input [formControl]="Nombre" type="text" class="form-control" id="NomAnimal" >
+          <input [formControl]="Nombre" type="text" class="form-control" id="NomAnimal" required >
         </div>
         <div class="mb-3 col-4" >
           <label for="TipoAnimal" class="form-label">Tipo</label>
-          <input [formControl]="Tipo" type="text" class="form-control" id="TipoAnimal" >
+          <input [formControl]="Tipo" type="text" class="form-control" id="TipoAnimal" required >
         </div>
         <div class="mb-3 col-4" >
             <label for="EspecieAnimal" class="form-label">Especie</label>
-            <input [formControl]="Especie" type="text" class="form-control" id="EspecieAnimal" >
+            <input [formControl]="Especie" type="text" class="form-control" id="EspecieAnimal" required >
         </div>
         </div>
 
@@ -24,19 +31,19 @@
 
             <div class="mb-3 col-3">
               <label for="PaisAnimal" class="form-label">PaisOrigen</label>
-              <input [formControl]="PaisOrigen" type="text" class="form-control" id="PaisAnimal">
+              <input [formControl]="PaisOrigen" type="text" class="form-control" id="PaisAnimal" required>
             </div>
             <div class="mb-3 col-3" >
               <label for="ZonasAnimal" class="form-label">ZonasDondeHabitan</label>
-              <input [formControl]="ZonasDondeHabitan" type="text" class="form-control" id="ZonasAnimal">
+              <input [formControl]="ZonasDondeHabitan" type="text" class="form-control" id="ZonasAnimal" required>
             </div>
             <div class="mb-3 col-3" >
                 <label for="AlimentacionAnimal" class="form-label">Alimentacion</label>
-                <input [formControl]="Alimentacion" type="text" class="form-control" id="AlimentacionAnimal">
+                <input [formControl]="Alimentacion" type="text" class="form-control" id="AlimentacionAnimal" required>
             </div>
              <div class="mb-3 col-1" >
                 <label for="EdadAnimal" class="form-label">Edad</label>
-                <input [formControl]="Edad" type="number" class="form-control" id="EdadAnimal" > 
+                <input [formControl]="Edad" type="number" class="form-control" id="EdadAnimal" required> 
             </div>
         </div>
 
@@ -45,12 +52,13 @@
             <div class="mb-3 input-group" >
                 <label for="ImagAnimal" class="form-label">Nombre Imagen </label>
                 <input [formControl]="URLfoto" type="text" class="form-control" id="ImagAnimal"
-                placeholder="Nombre Imagen">
+                placeholder="Nombre Imagen" required>
                 <span class="input-group-text">. JPG</span>
             </div>
         </div>
 
-        <button type="submit" class="btn btn-success" (click)="AgregarA()">Agregar Animal</button>
+        <button type="submit" class="btn btn-success" (click)="AgregarA()" 
+        (click)="AnimalAgregado = !AnimalAgregado">Agregar Animal</button>
 
       </form>
 
