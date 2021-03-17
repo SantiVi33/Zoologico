@@ -13,6 +13,7 @@ export class AnimalesService {
 
       console.log('Servicio Animales Andando')
 
+
   } 
 
   VerAnimales() {
@@ -39,9 +40,14 @@ export class AnimalesService {
 
   }
 
+  VerAnimal (i : number) { 
+    let urlNew = this._url + i;
+    let header = new HttpHeaders().set('type-content','aplication/json')
+    return this.http.get(urlNew,{headers:header})
+  }
+
  
 
   //VerTipo (string: tipo) {}
 
-  //VerAnimal (int: any) { urlNew = _url + i}
 }

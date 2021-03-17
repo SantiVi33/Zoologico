@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalesService } from '../animales.service';
 import { FormControl } from '@angular/forms'
+import { NumberFormatStyle } from '@angular/common';
 
 @Component({
   selector: 'app-lista-animales',
@@ -25,7 +26,7 @@ export class ListaAnimalesComponent implements OnInit {
   //AnimalA = []
 
   public Animal: Array<any> = []
-
+  public unAnimal: any;
 
   constructor(private animalService:AnimalesService) { 
 }
@@ -63,10 +64,17 @@ export class ListaAnimalesComponent implements OnInit {
         this.PaisOrigen.setValue("");
         this.ZonasDondeHabitan.setValue("");
         this.Alimentacion.setValue("");
-        this.Edad.setValue("");
+        this.Edad.setValue("")
         this.URLfoto.setValue("");;
           })
 
+
+  }
+
+  VerAnimal(i : number) {
+      console.log('DATO DEL ANIMAL CARGADO')
+
+      this.unAnimal = this.Animal[i];
 
   }
 
