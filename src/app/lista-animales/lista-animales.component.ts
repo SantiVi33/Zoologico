@@ -12,6 +12,7 @@ export class ListaAnimalesComponent implements OnInit {
 
   AgregarAnimal:boolean = false;
   AnimalAgregado: boolean = false;
+  //AnimalBorrado: boolean = false;
   Carga:boolean = true;
 
   Nombre: FormControl = new FormControl('')
@@ -82,6 +83,20 @@ export class ListaAnimalesComponent implements OnInit {
     if (this.AnimalAgregado == true) {
       this.AnimalAgregado = false 
     }
+   // if (this.AnimalBorrado == true) {
+     // this.AnimalBorrado = false 
+    //}
+  }
+
+  EliminarAnimal(id : string):void {
+    if (confirm('Seguro que quiere eliminar este animal?')) {
+    this.animalService.eliminarAnimal(id).subscribe(res => {
+      console.log(res)
+      this.LeerAnimales()
+    })
+   // this.AnimalBorrado = true
+  }
+
   }
 
 

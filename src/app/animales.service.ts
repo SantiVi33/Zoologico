@@ -46,6 +46,13 @@ export class AnimalesService {
     return this.http.get(urlNew,{headers:header})
   }
 
+  EditarAnimal (i : number) {
+  }
+
+  eliminarAnimal (id : string): Observable<any> {
+    return this.http.delete(this._url+'/'+id)
+  }
+
  
 
   //VerTipo (string: tipo) {}
