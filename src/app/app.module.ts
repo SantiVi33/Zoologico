@@ -18,6 +18,7 @@ import { CompraEntradasComponent } from './compra-entradas/compra-entradas.compo
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { NewUsuarioComponent } from './new-usuario/new-usuario.component';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
@@ -37,7 +38,8 @@ const routes: Routes = [
     GaleriaComponent,
     CabeceraComponent,
     ListaAnimalesComponent,
-    CompraEntradasComponent
+    CompraEntradasComponent,
+    NewUsuarioComponent
   ],
   imports: [
     BrowserModule,
