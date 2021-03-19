@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AnimalesService } from '../animales.service';
 import { FormControl } from '@angular/forms'
 import { NumberFormatStyle } from '@angular/common';
+import { Router } from '@angular/router'
+
 
 @Component({
   selector: 'app-lista-animales',
@@ -11,9 +13,8 @@ import { NumberFormatStyle } from '@angular/common';
 export class ListaAnimalesComponent implements OnInit {
 
   AgregarAnimal:boolean = false;
-  AnimalAgregado: boolean = false;
-  //AnimalBorrado: boolean = false;
   Carga:boolean = true;
+
 
   Nombre: FormControl = new FormControl('')
   Tipo: FormControl = new FormControl('')
@@ -24,25 +25,26 @@ export class ListaAnimalesComponent implements OnInit {
   Edad: FormControl = new FormControl('')
   URLfoto: FormControl = new FormControl('')
 
-  //AnimalA = []
-
-  public Animal: Array<any> = []
+  public Animal : Array<any> = []
   public unAnimal: any;
+  
 
-  constructor(private animalService:AnimalesService) { 
+  constructor(private animalService:AnimalesService , public router : Router) { 
+
 }
 
   LeerAnimales() {
     this.animalService.VerAnimales().subscribe((resp:any )=>{
 
+    
       this.Animal = resp
 
       console.log('DATOS ANIMALES CARGADOS')
 
       this.Carga=false
+
     })
   } 
-
 
   AgregarA() : void {
 
@@ -54,47 +56,39 @@ export class ListaAnimalesComponent implements OnInit {
       let alimentacion = this.Alimentacion.value;
       let edad = this.Edad.value;
       let url = this.URLfoto.value;
-      
+
+       window.location.reload();
 
       this.animalService.AgregarA(nombre,tipo,especie,pais,zonas,alimentacion,edad,url)
           .subscribe(data => {console.log(data)  
-        this.LeerAnimales();
         this.Nombre.setValue("");
         this.Tipo.setValue("");
         this.Especie.setValue("");
         this.PaisOrigen.setValue("");
         this.ZonasDondeHabitan.setValue("");
         this.Alimentacion.setValue("");
-        this.Edad.setValue("")
-        this.URLfoto.setValue("");;
+        this.Edad.setValue("");
+        this.URLfoto.setValue("");
           })
 
+  
+
 
   }
 
-  VerAnimal(i : number) {
-      console.log('DATO DEL ANIMAL CARGADO')
-
-      this.unAnimal = this.Animal[i];
+  VerAnimal(id : number) {
+      
+      this.unAnimal = this.Animal[id];
 
   }
 
-  OcultarMensaje() {
-    if (this.AnimalAgregado == true) {
-      this.AnimalAgregado = false 
-    }
-   // if (this.AnimalBorrado == true) {
-     // this.AnimalBorrado = false 
-    //}
-  }
 
   EliminarAnimal(id : string):void {
     if (confirm('Seguro que quiere eliminar este animal?')) {
-    this.animalService.eliminarAnimal(id).subscribe(res => {
-      console.log(res)
-      this.LeerAnimales()
+      this.animalService.eliminarAnimal(id).subscribe(res => {
+       window.location.reload();
+       console.log(res)
     })
-   // this.AnimalBorrado = true
   }
 
   }

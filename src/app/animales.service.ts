@@ -16,10 +16,9 @@ export class AnimalesService {
 
   } 
 
-  VerAnimales() {
-    let header = new HttpHeaders().set('type-content','aplication/json')
+  VerAnimales(){
 
-    return this.http.get(this._url,{headers:header});
+    return this.http.get(this._url);
 
   }
 
@@ -40,10 +39,9 @@ export class AnimalesService {
 
   }
 
-  VerAnimal (i : number) { 
-    let urlNew = this._url + i;
-    let header = new HttpHeaders().set('type-content','aplication/json')
-    return this.http.get(urlNew,{headers:header})
+  VerAnimal (id : string): Observable<any> { 
+    //let header = new HttpHeaders().set('type-content','aplication/json')
+    return this.http.get(this._url+'/'+id)
   }
 
   EditarAnimal (i : number) {
