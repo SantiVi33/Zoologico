@@ -1,7 +1,8 @@
 import {RouterModule, Routes} from '@angular/router';
 
-import {PersonalService} from '../app/personal.service';
-import {AnimalesService} from '../app/animales.service';
+import {PersonalService} from './Services/personal.service';
+import {AnimalesService} from './Services/animales.service';
+import {UsersService} from './Services/users.service'
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'galeria', component: GaleriaComponent },
   { path: 'Animales', component: ListaAnimalesComponent },
   { path: 'Entradas', component: CompraEntradasComponent },
+  { path: 'NewUsuario', component: NewUsuarioComponent},
   { path: '', component: PortadaComponent, pathMatch: 'full'},
   { path: '**', redirectTo: '/', pathMatch: 'full'},
 ];
@@ -51,7 +53,8 @@ const routes: Routes = [
   ],
   providers: [
     PersonalService,
-    AnimalesService
+    AnimalesService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })

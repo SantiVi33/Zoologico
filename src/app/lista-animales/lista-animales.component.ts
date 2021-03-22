@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimalesService } from '../animales.service';
+import { AnimalesService } from '../Services/animales.service';
 import { FormControl } from '@angular/forms'
 import { NumberFormatStyle } from '@angular/common';
 import { Router } from '@angular/router'
@@ -29,7 +29,7 @@ export class ListaAnimalesComponent implements OnInit {
   public unAnimal: any;
   
 
-  constructor(private animalService:AnimalesService , public router : Router) { 
+  constructor(private animalService:AnimalesService , private router : Router) { 
 
 }
 

@@ -36,30 +36,34 @@
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
-        </div>
 
-        <div class="mx-5">
+          <div class="mx-5">
 
-          <li class="nav-item dropdown">
-            <a class="navbar-brand"  id="navbarDropdown" role="button"  data-bs-toggle="dropdown" 
-            aria-expanded="false">
-              Login
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <form>
-                <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Usuario">
-                </div>
-                <div class="mb-3">
-                  <input type="password" class="form-control" placeholder="clave">
-                </div>
-                <div class="text-center">
-                <button type="submit" class="btn btn-primary ">Ingresar</button>
-                </div>
-              </form>
-            </ul>
-    
-          </li>
+            <li class="nav-item dropdown">
+              <a class="navbar-brand"  id="navbarDropdown" role="button"  data-bs-toggle="dropdown" 
+              aria-expanded="false">
+                Login
+              </a>
+              <ul class="dropdown-menu mr-auto" aria-labelledby="navbarDropdown">
+                <form>
+                  <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Usuario">
+                  </div>
+                  <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="clave">
+                  </div>
+                  <div class="text-center">
+                  <button type="submit" class="btn btn-primary ">Ingresar</button>
+                  </div>
+                  <h6 class="mt-1">Soy <a [routerLink]="['/NewUsuario']">Nuevo</a></h6> 
+                  <h6 class="mt-1">Olvide mi <a href="#">Clave</a></h6>  
+                </form>
+              </ul>
+      
+            </li>
+          </div>
+
+
         </div>
 
 

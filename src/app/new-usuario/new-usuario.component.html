@@ -1,1 +1,69 @@
-<p>new-usuario works!</p>
+<div class="container mt-3" >
+
+  <form class="needs-validation" novalidate>
+    <div class="row">
+        <div class="mb-3 col-3">
+            <label for="Nombre" class="form-label">Nombre/s</label>
+            <input [formControl]="Nombre" type="text" class="form-control" id="Nombre" aria-describedby="nombreHelp" required>
+            <div *ngIf="NoNombre" id="nombreHelp" class="form-text">ingrese un nombre</div>
+          </div>
+          <div class="mb-3 col-3">
+            <label for="Apellido" class="form-label">Apellido/S</label>
+            <input [formControl]="Apellido" type="text" class="form-control" id="Apellido" aria-describedby="apeHelp" required>
+          </div>
+          <div class="col-2">
+            <label for="TipoDocumento" class="form-label">Tipo Documento</label>
+            <select [formControl]="TipDocumento" class="form-select" aria-label="Default select documento">
+                <option value="D.N.I" selected>D.N.I</option>
+                <option value="L.E">L.E</option>
+                <option value="L.C">L.C</option>
+                <option value="Doc. Extranjero">Doc. Extranjero</option>
+              </select>
+          </div>
+          <div class="mb-3 col-3">
+            <label for="Documento" class="form-label">Documento</label>
+            <input [formControl]="NroDocumento" type="number" class="form-control" id="Documento" aria-describedby="ndocHelp" required>
+          </div>
+
+    </div>
+    <div class="row ">
+        <div class="mb-3 col-5">
+            <label for="Email" class="form-label">Correo Electronico</label>
+            <input [formControl]="Email" type="email" class="form-control" id="Email" aria-describedby="emailHelp" required>
+         </div>
+         <div class="mb-3 col-3">
+            <label for="Usuario" class="form-label">Usuario</label>
+            <input [formControl]="Usuario" type="text" class="form-control" id="Usuario" aria-describedby="usuarioHelp" required>
+            <div class="valid-feedback">
+              Usuario no existente
+            </div>
+            <div class="invalid-feedback">
+              Este usuario ya existe
+            </div>
+          </div>
+         <div class="mb-3 col-3">
+            <label for="Clave" class="form-label">Clave</label>
+            <input [formControl]="password" type="text" class="form-control" id="Clave" aria-describedby="claveHelp" required>
+         </div>           
+    </div>
+
+
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" value="1" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">No soy un robot</label>
+    </div>
+
+    <div class="row">
+      
+      <div class="col-3">
+        <button type="submit col-3" class="btn btn-primary" (click)="AgregarUsuario()">Crear Usuario</button>
+      </div>
+
+      <div class="col-9" *ngIf="UsuarioAgregando">
+        <h6>Creando Usuario, por favor espere</h6>
+      </div>
+      
+    </div>
+  </form> 
+
+</div>
