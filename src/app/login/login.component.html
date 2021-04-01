@@ -1,0 +1,36 @@
+
+<div class="container mt-5">
+
+    <form [formGroup]="loginGroup" (ngSubmit)="ComprobarUsuario()">
+
+        <div class="mb-3 col-4">
+          <input formControlName="email" type="text" class="form-control" placeholder="Usuario">
+          <div *ngIf="loginGroup.controls.email.hasError('required') && enviado">
+            <h6>El correo es obligatorio</h6>
+          </div>
+          <div *ngIf="loginGroup.controls.email.hasError('email') && !loginGroup.controls.email.hasError('required') && enviado">
+            <h6>No es un correo valido</h6>
+          </div>
+        </div>
+        <div class="mb-3 col-4">
+          <input formControlName="password" type="password" class="form-control" placeholder="clave">
+          <div *ngIf="loginGroup.controls.password.hasError('required') && enviado">
+            <h6>La clave es obligatoria</h6>
+          </div>
+        </div>
+        <div class="mb-3 form-check">
+          <input formControlName="remember_me" type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">No soy un robot</label>
+        </div>
+        <div class="col-4">
+        <button class="btn btn-primary">Ingresar</button>
+        </div>
+        <h6 class="mt-1">Soy <a [routerLink]="['/NewUsuario']">Nuevo</a></h6> 
+        <h6 class="mt-1">Olvide mi <a href="#">Clave</a></h6>  
+      </form>
+
+      <div *ngIf="mensaje">
+        {{mensaje}}
+      </div>
+
+</div>

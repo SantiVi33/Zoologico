@@ -10,6 +10,6 @@ export class CabeceraComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
+  } 
 
 }

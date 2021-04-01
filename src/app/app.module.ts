@@ -20,16 +20,20 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { NewUsuarioComponent } from './new-usuario/new-usuario.component';
+import { LoginComponent } from './login/login.component';
+import { AutentificacionGuard } from './autentificacion.guard';
 
 const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'galeria', component: GaleriaComponent },
   { path: 'Animales', component: ListaAnimalesComponent },
-  { path: 'Entradas', component: CompraEntradasComponent },
+  { path: 'Entradas', component: CompraEntradasComponent, canActivate:[AutentificacionGuard]},
   { path: 'NewUsuario', component: NewUsuarioComponent},
+  { path: 'Login', component: LoginComponent}, 
   { path: '', component: PortadaComponent, pathMatch: 'full'},
   { path: '**', redirectTo: '/', pathMatch: 'full'},
 ];
+
 
 @NgModule({
   declarations: [
@@ -41,7 +45,8 @@ const routes: Routes = [
     CabeceraComponent,
     ListaAnimalesComponent,
     CompraEntradasComponent,
-    NewUsuarioComponent
+    NewUsuarioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
