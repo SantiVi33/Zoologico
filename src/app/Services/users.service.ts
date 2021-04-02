@@ -18,8 +18,7 @@ export class UsersService {
     console.log('Servicio Usuario Andando')
   } 
   
-  AgregarU (nombre : string , apellido : string , tdocumento : string , ndocumento : string , email : string,
-            usuario : string , clave : string) : Observable<any>
+  AgregarU (nombre : string , apellido : string , tdocumento : string , ndocumento : string , email : string , usuario : string , clave : string, rango : string) : Observable<any>
   {
     const obj = new FormData();
     obj.append("Nombre",nombre);
@@ -29,7 +28,8 @@ export class UsersService {
     obj.append("Email",email);
     obj.append("Usuario",usuario);
     obj.append("password",clave);
-    return this.http.post(environment.endpoint + '/DatosUsuarios',obj);
+    obj.append("Rango",rango);
+    return this.http.post('Datos/DatosUsuarios',obj);
   }
 
   Login(correo : string, clave : string): Observable <any> {

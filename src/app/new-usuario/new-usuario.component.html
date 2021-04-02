@@ -5,7 +5,6 @@
         <div class="mb-3 col-3">
             <label for="Nombre" class="form-label">Nombre/s</label>
             <input [formControl]="Nombre" type="text" class="form-control" id="Nombre" aria-describedby="nombreHelp" required>
-            <div *ngIf="NoNombre" id="nombreHelp" class="form-text">ingrese un nombre</div>
           </div>
           <div class="mb-3 col-3">
             <label for="Apellido" class="form-label">Apellido/S</label>
@@ -27,7 +26,7 @@
 
     </div>
     <div class="row ">
-        <div class="mb-3 col-5">
+        <div class="mb-3 col-3">
             <label for="Email" class="form-label">Correo Electronico</label>
             <input [formControl]="Email" type="email" class="form-control" id="Email" aria-describedby="emailHelp" required>
          </div>
@@ -44,7 +43,15 @@
          <div class="mb-3 col-3">
             <label for="Clave" class="form-label">Clave</label>
             <input [formControl]="password" type="text" class="form-control" id="Clave" aria-describedby="claveHelp" required>
-         </div>           
+         </div>  
+         <div class="col-3">
+            <label for="Rango" class="form-label">Rango</label>
+            <select [formControl]="Rango" id="Rango" class="form-select" aria-label="Default select rango" aria-describedby="rangoHelp">
+                <option value="Visitante" selected>Visitante</option>
+                <option value="Administrador">Administrador</option> 
+              </select>
+            <div id="rangoHelp" class="form-text">A modo de prueba, por Default todos son visitantes</div>
+          </div>         
     </div>
 
 
