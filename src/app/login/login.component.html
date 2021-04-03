@@ -4,11 +4,11 @@
     <form [formGroup]="loginGroup" (ngSubmit)="ComprobarUsuario()">
 
         <div class="mb-3 col-4">
-          <input formControlName="email" type="text" class="form-control" placeholder="Usuario">
-          <div *ngIf="loginGroup.controls.email.hasError('required') && enviado">
+          <input formControlName="Usuario" type="text" class="form-control" placeholder="Usuario">
+          <div *ngIf="loginGroup.controls.Usuario.hasError('required') && enviado">
             <h6>El correo es obligatorio</h6>
           </div>
-          <div *ngIf="loginGroup.controls.email.hasError('email') && !loginGroup.controls.email.hasError('required') && enviado">
+          <div *ngIf="loginGroup.controls.Usuario.hasError('email') && !loginGroup.controls.Usuario.hasError('required') && enviado">
             <h6>No es un correo valido</h6>
           </div>
         </div>

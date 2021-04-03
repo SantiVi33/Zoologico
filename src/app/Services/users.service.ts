@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'; 
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class UsersService {
  
  headers : HttpHeaders;
 
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient, private router : Router) { 
    this.headers = new HttpHeaders({
     "Accept" : "application/json",});
 
@@ -32,9 +33,19 @@ export class UsersService {
     return this.http.post('Datos/DatosUsuarios',obj);
   }
 
-  Login(correo : string, clave : string): Observable <any> {
-    return this.http.post<any>("Datos/DatosUsuarios/login",{email:correo,password:clave},{headers:this.headers})
+  Login(usuario : string, clave : string): Observable <any> {
+    return this.http.post<any>("Datos/DatosUsuarios/login",{Usuario:usuario,password:clave},{headers:this.headers})
     .pipe(map(datos=>{return datos}));
+  }
+
+  Token() {
+    let Activo = localStorage.getItem("Usuario");
+    if(!Activo){
+      this.router.navigate(['http://localhost:4200/Login'])
+      return null;
+    }
+    let UserJson= JSON.parse(Activo);
+    return UserJson['token_type'] + " " + UserJson['access_token'];
   }
 
 }

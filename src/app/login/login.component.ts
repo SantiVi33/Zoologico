@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService:UsersService , private router : Router , private formbuilder: FormBuilder ) {
     this.loginGroup=this.formbuilder.group({
-      email:['',[Validators.required,Validators.email]],
+      Usuario:['',[Validators.required,]],
       password:['',[Validators.required]],
       remember_me:['']
     })
@@ -25,18 +25,16 @@ export class LoginComponent implements OnInit {
   ComprobarUsuario() {
     this.enviado = true;
     if(this.loginGroup.invalid){
+      console.log('Datos invalidos')
       return;
     }
-    this.userService.Login(this.loginGroup.controls.email.value,this.loginGroup.controls.password.value) 
+    console.log('Resultado de la busqueda:')
+    this.userService.Login(this.loginGroup.controls.Usuario.value,this.loginGroup.controls.password.value) 
     .subscribe(datos=> {
-    //localStorage.setItem('Usuario',JSON.stringify(datos));  
-    //this.router.navigate([]);
-    console.log('USUARIO ENCONTRADO')
-    //this.mensaje="Usuario encontrado"
-    return;
+    localStorage.setItem('Usuario',JSON.stringify(datos));  
+    this.router.navigate(['localhost:4200']);
     }); 
-    console.log('Usuario no encontrado') }
-    //this.mensaje="Usuario no encontrado" }
+    this.mensaje="Usuario no encontrado" }
     
 
 
