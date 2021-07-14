@@ -24,17 +24,21 @@ export class LoginComponent implements OnInit {
 
   ComprobarUsuario() {
     this.enviado = true;
+    this.mensaje = "";
+    let correcto
     if(this.loginGroup.invalid){
+      this.mensaje = "Datos invalidos";
       console.log('Datos invalidos')
       return;
     }
     console.log('Resultado de la busqueda:')
-    this.userService.Login(this.loginGroup.controls.Usuario.value,this.loginGroup.controls.password.value) 
+   this.userService.Login(this.loginGroup.controls.Usuario.value,this.loginGroup.controls.password.value) 
     .subscribe(datos=> {
+    correcto = true;
     localStorage.setItem('Usuario',JSON.stringify(datos));  
     this.router.navigate(['localhost:4200']);
-    }); 
-    this.mensaje="Usuario no encontrado" }
+     }) 
+  }
     
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'; 
 import { environment } from 'src/environments/environment';
@@ -11,6 +11,7 @@ import { Router } from '@angular/router'
 export class UsersService {
  
  headers : HttpHeaders;
+ Logueado : boolean = false;
 
   constructor(private http:HttpClient, private router : Router) { 
    this.headers = new HttpHeaders({
@@ -34,6 +35,7 @@ export class UsersService {
   }
 
   Login(usuario : string, clave : string): Observable <any> {
+    console.log('Verificando usuario')
     return this.http.post<any>("Datos/DatosUsuarios/login",{Usuario:usuario,password:clave},{headers:this.headers})
     .pipe(map(datos=>{return datos}));
   }
@@ -41,11 +43,15 @@ export class UsersService {
   Token() {
     let Activo = localStorage.getItem("Usuario");
     if(!Activo){
-      this.router.navigate(['http://localhost:4200/Login'])
       return null;
     }
+    this.Logueado = true;
     let UserJson= JSON.parse(Activo);
     return UserJson['token_type'] + " " + UserJson['access_token'];
+  }
+
+  OutLogin(){
+    localStorage.removeItem("Usuario");
   }
 
 }
