@@ -1,30 +1,70 @@
 <div class="container mt-3">
 
-<h1 class="text-center">Bienvenidos a ZooPark, un lugar inigualable para visitar solo, junto a su pareja, familia,
+<h1 class="text-center my-3">Bienvenidos a ZooPark, un lugar inigualable para visitar solo, junto a su pareja, familia,
 amigos y mas! no dudes en llamarnos o enviarnos un correo</h1>
 
-<h4 class="my-4">Encuentranos en 7 de Marzo 1939, Santo Tomé, provincia de Santa Fe</h4>
+<div class="my-5">
 
-<h3>Horarios: </h3>
-<h4>Martes a Sabados de 11:00 a 18:00 hs</h4>
-<h4>Domingos         de  9:00 a 20:00 hs</h4>
-<h6>* Horarios de invierno puede sufrir modificaciones</h6>
+<p class="d-grid gap-2 col-9 mx-auto"> 
+      <a class="btn btn-info" data-bs-toggle="collapse" href="#Ubicacion" role="button" aria-expanded="false" aria-controls="collapseExample">
+         Donde encontrarnos?
+      </a>
+</p>
+ <div class="collapse" id="Ubicacion">
+   <div class="card card-body">
+      <h4 class="my-4">Encuentranos en 7 de Marzo 1939, Santo Tomé, provincia de Santa Fe</h4>
+   </div>
+ </div>
 
-<h3 class="mt-5">Valor entrada: </h3> 
-<h4>Menor a 3 años : Sin cargo</h4>
-<h4>Niños de entre 3 y 12 años : $50</h4>
-<h4>Adolescente de entre 12 y 16 años: $70</h4>
-<h4>Adultos : $100</h4>
-<h4>Jubilados: $50</h4>
-<h6>* Para viajes escolares, o de turismo, consultar por telefono</h6>
-<h4>Para comprar entradas presione <a [routerLink] = "['/Entradas']">aqui</a> </h4> 
+ <p class="d-grid gap-2 col-9 mx-auto">
+   <a class="btn btn-info col-12" data-bs-toggle="collapse" href="#Horarios" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Cuando encontrarnos?
+    </a>
+</p>
+<div class="collapse" id="Horarios">
+   <div class="card card-body">
+      <h3>Horarios: </h3>
+         <h4>Martes a Sabados de 11:00 a 18:00 hs</h4>
+         <h4>Domingos         de  9:00 a 20:00 hs</h4>
+         <h6>* Horarios de invierno puede sufrir modificaciones</h6>
+   </div>
+ </div>
 
-<h3 class="mt-5">Contacto: </h3>
-<h4>Telefono : 4125121</h4>
-<h4>Celular : 155 25215123</h4>
-<h4>Correo : info@ZooPark.com</h4>
+ <p class="d-grid gap-2 col-9 mx-auto">
+    <a class="btn btn-info col-12" data-bs-toggle="collapse" href="#Precio" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Cuanto cuesta la visita?
+    </a>
+</p>
+<div class="collapse" id="Precio">
+   <div class="card card-body">
+      <h3 class="mt-5">Valor entrada: </h3> 
+         <h4>Menor a 3 años : Sin cargo</h4>
+         <h4>Niños de entre 3 y 12 años : $50</h4>
+         <h4>Adolescente de entre 12 y 16 años: $70</h4>
+         <h4>Adultos : $100</h4>
+         <h4>Jubilados: $50</h4>
+         <h6>* Para viajes escolares, o de turismo, consultar por telefono</h6>
+         <h4>Para comprar entradas presione <a [routerLink] = "['/Entradas']">aqui</a> </h4> 
+   </div>
+ </div>
 
-<h3 class="mt-5">Quienes permiten hacer el funcionamiento del lugar: </h3>
+ <p class="d-grid gap-2 col-9 mx-auto">
+    <a class="btn btn-info col-12" data-bs-toggle="collapse" href="#Contacto" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Como contactarnos?
+    </a>
+</p>
+<div class="collapse" id="Contacto">
+   <div class="card card-body">
+      <h3 class="mt-5">Contacto: </h3>
+         <h4>Telefono : 4125121</h4>
+         <h4>Celular : 155 25215123</h4>
+         <h4>Correo : info@ZooPark.com</h4>
+   </div>
+ </div>
+
+</div>
+
+<h3 class="my-5">Quienes permiten hacer el funcionamiento del lugar: </h3>
 
  <div class="container" *ngFor="let Persona of Personal">
 
